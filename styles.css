@@ -57,4 +57,48 @@ span{
   border-radius: 12px;
   padding: 5px;
 }
-
+.menuPerfil{
+  width:300px;
+  height:200px;
+  border:none;
+  border-radius: 12px;
+  background-color:#F1F1F1;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.botaoConfiguracoesPerfil{
+  margin:auto;
+  margin-left: 8px;
+  margin-top: 15px;
+  border:none;
+  background-color: transparent;
+  color:black;
+  border-style: none;
+}
+.botaoConfiguracoesPerfil:hover{
+  color:blue;
+}
+.botaoDadosPessoaisPerfil{
+  margin:auto;
+  margin-left: 8px;
+  margin-top: 15px;
+  border:none;
+  background-color: transparent;
+  color:black;
+  border-style: none;
+}
+.botaoDadosPessoaisPerfil:hover{
+  color:blue;
+}
+.botaoDadosPagamentoPerfil{
+  margin:auto;
+  margin-left: 8px;
+  margin-top: 15px;
+  border:none;
+  background-color: transparent;
+  color:black;
+  border-style: none;
+}
+.botaoDadosPagamentoPerfil:hover{
+  color:blue;
+}

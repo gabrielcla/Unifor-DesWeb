@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tema</title>
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- CSS do Tema -->
+    <link href="tema.css" rel="stylesheet"/>
+  </head>
+
+  <body>
+<!-- BARRA DE NAVEGAÇÃO -->
+    <nav class="navbar navbar-expand-sm BNav">
+      <div class="container-fluid">
+        <a class="navbar-brand textoBNav" href="#"><b>StarsHotel</b></a>
+        
+        <!-- Botão que esconde os itens na versão mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Itens que no celular vão pra dentro do botão da versão mobile -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="container"><div class="row">
+            <div class="col-6">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link textoBNav" href="#">Início</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link textoBNav" href="#">Mapa</a>
+                </li>
+                <li class="nav-item dropdown ms-auto">
+                  <a class="nav-link dropdown-toggle textoBNav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Idioma</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Português</a></li>
+                    <li><a class="dropdown-item" href="#">Inglês</a></li>
+                  </ul>
+                </li>
+              </ul>           
+            </div>
+
+            <!-- Formulário de Pesquisa -->
+            <div class="col-6">              
+              <form class="row mt-1">
+                <div class="col-sm-6">
+                  <input class="form-control form-control-sm formularioBNav" type="search" placeholder="Qual o destino?" >
+                </div>
+                <div class="col-sm-3">
+                  <input class="form-control form-control-sm formularioBNav" type="date" name="checkin" id="date">
+                </div>
+                <div class="col-sm-3">
+                  <input class="form-control form-control-sm formularioBNav" type="date" name="checkout">
+                </div>
+              </form>            
+            </div>
+          
+          </div></div>
+        </div>
+      </div>
+    </nav>
+<!-- FIM DA BARRA DE NAVEGAÇÃO -->
+
+    
+<!-- CONTEÚDO -->
+<div class="container">
+
+  <!-- Hotel 1 -->
+  <div>
+    <div class="card my-2">
+      <h5 class="card-header">Blue Tree Thermas de Lins</h5> <!-- Título -->
+      <div class="row">
+        <div class="col-md-3">
+          <img src="imgs/hotel1.jpg" class="card-img-top m-2">
+        </div>
+        <div class="col-md-9">
+          <div class="card-body">
+            <!-- Descrição do Hotel -->
+            <p> Blue Tree Thermas de Lins dispõe de piscina ao ar livre e restaurante em Lins. O resort oferece Wi-Fi. Os quartos possuem TV e ar-condicionado. Todos têm banheiro privativo com chuveiro. Outras comodidades incluem sofá, mesa de trabalho e cofre com capacidade para laptop.</p>
+            <p> Blue Tree Thermas de Lins apresenta quadra de tênis, academia, playground e lavanderia. Você pode desfrutar de várias atividades no local e nos arredores, tais como passeios de bicicleta e parque aquático. A propriedade oferece estacionamento gratuito.</p>
+            <p> <!-- Botões que controlam os campos collapsáveis -->
+              <a class="me-2" data-bs-toggle="collapse" href="#h1-destaque" role="button" aria-expanded="false" aria-controls="h1-destaque">Destaques</a>
+              <a class="me-2" data-bs-toggle="collapse" href="#h1-info" role="button" aria-expanded="false" aria-controls="h1-info">Info</a>
+              <a class="me-2" data-bs-toggle="collapse" href="#h1-avaliacoes" role="button" aria-expanded="false" aria-controls="h1-avaliacoes">Avaliações</a>
+              <a class="me-2" data-bs-toggle="collapse" href="#h1-preco" role="button" aria-expanded="false" aria-controls="h1-preco">Preços</a>                                
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Containers que só aparecem ao clicar no item deles -->
+    <div class="collapse m-2" id="h1-destaque">
+      <div class="card card-body">
+        Destaques...
+      </div>
+    </div>
+    <div class="collapse m-2" id="h1-info">
+      <div class="card card-body">
+        Info...
+      </div>
+    </div>
+    <div class="collapse m-2" id="h1-avaliacoes">
+      <div class="card card-body">
+        Avaliações...
+      </div>
+    </div>
+    <div class="collapse m-2" id="h1-preco">
+      <div class="card card-body">
+        Preços...
+      </div>
+    </div>
+  </div>
+
+  <!-- Hotel 2 -->
+  <div>
+    <div class="card my-2">
+      <h5 class="card-header">Ape Paulista Bela Cintra</h5> <!-- Título -->
+      <div class="row">
+        <div class="col-md-3">
+          <img src="imgs/hotel2.jpg" class="card-img-top m-2">
+        </div>
+        <div class="col-md-9">
+          <div class="card-body">
+            <!-- Descrição do Hotel -->
+            <p> Situado a 1,4 km do Estádio do Pacaembu, em São Paulo, o Ape Paulista Bela Cintra oferece acomodações com ar-condicionado e Wi-Fi gratuito.</p>
+            <p> As unidades possuem piso em parquet, cozinha totalmente equipada com micro-ondas, área para refeições, TV de tela plana e banheiro privativo com banheira ou chuveiro e produtos de banho gratuitos.</p>
+            <p> <!-- Botões que controlam os campos collapsáveis -->
+              <a class="me-2" data-bs-toggle="collapse" href="#h2-destaque" role="button" aria-expanded="false" aria-controls="h2-destaque">Destaques</a>
+              <a class="me-2" data-bs-toggle="collapse" href="#h2-info" role="button" aria-expanded="false" aria-controls="h2-info">Info</a>
+              <a class="me-2" data-bs-toggle="collapse" href="#h2-avaliacoes" role="button" aria-expanded="false" aria-controls="h2-avaliacoes">Avaliações</a>
+              <a class="me-2" data-bs-toggle="collapse" href="#h2-preco" role="button" aria-expanded="false" aria-controls="h2-preco">Preços</a>                                
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Containers que só aparecem ao clicar no item deles -->
+    <div class="collapse m-2" id="h2-destaque">
+      <div class="card card-body">
+        Destaques...
+      </div>
+    </div>
+    <div class="collapse m-2" id="h2-info">
+      <div class="card card-body">
+        Info...
+      </div>
+    </div>
+    <div class="collapse m-2" id="h2-avaliacoes">
+      <div class="card card-body">
+        Avaliações...
+      </div>
+    </div>
+    <div class="collapse m-2" id="h2-preco">
+      <div class="card card-body">
+        Preços...
+      </div>
+    </div>
+  </div>
+
+  <!-- Hotel 3 -->
+  <div>
+    <div class="card my-2">
+      <h5 class="card-header">Nome do Hotel</h5> <!-- Título -->
+      <div class="row">
+        <div class="col-md-3">
+          <img src="imgs/hotel3.jpg" class="card-img-top m-2">
+        </div>
+        <div class="col-md-9">
+          <div class="card-body">
+            <!-- Descrição do Hotel -->
+            <p> Descrição - Paragrafo 1</p>
+            <p> Descrição - Paragrafo 2</p>
+            <p> <!-- Botões que controlam os campos collapsáveis -->
+              <a class="me-2" data-bs-toggle="collapse" href="#h3-destaque" role="button" aria-expanded="false" aria-controls="h3-destaque">Destaques</a>
+              <a class="me-2" data-bs-toggle="collapse" href="#h3-info" role="button" aria-expanded="false" aria-controls="h3-info">Info</a>
+              <a class="me-2" data-bs-toggle="collapse" href="#h3-avaliacoes" role="button" aria-expanded="false" aria-controls="h3-avaliacoes">Avaliações</a>
+              <a class="me-2" data-bs-toggle="collapse" href="#h3-preco" role="button" aria-expanded="false" aria-controls="h3-preco">Preços</a>                                
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Containers que só aparecem ao clicar no item deles -->
+    <div class="collapse m-2" id="h3-destaque">
+      <div class="card card-body">
+        Destaques...
+      </div>
+    </div>
+    <div class="collapse m-2" id="h3-info">
+      <div class="card card-body">
+        Info...
+      </div>
+    </div>
+    <div class="collapse m-2" id="h3-avaliacoes">
+      <div class="card card-body">
+        Avaliações...
+      </div>
+    </div>
+    <div class="collapse m-2" id="h3-preco">
+      <div class="card card-body">
+        Preços...
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- FIM DO CONTEÚDO -->
+
+<!-- SCRIPTS -->
+    <!-- JS do Tema -->
+    <script type="text/javascript" src="tema.js"></script>
+    
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>

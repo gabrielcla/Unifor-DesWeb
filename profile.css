@@ -7,6 +7,15 @@
   margin-top: 20px;
   margin-left: 20px;
 }
+.menuDadosPagamento{
+  width:700px;
+  height:400px;
+  border:none;
+  border-radius: 12px;
+  background-color:#F1F1F1;
+  margin-top: -200px;
+  margin-left: 400px;
+}
 .botaoConfiguracoes{
   margin:auto;
   margin-left: 8px;
@@ -42,4 +51,7 @@
 }
 .botaoDadosPagamento:hover{
   color:blue;
+}
+.esconderJanelaDadosPessoais{
+  display: none !important;
 }

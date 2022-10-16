@@ -24,3 +24,7 @@ body{
 }
 
 
+/* Cor de fundo dos containers */
+.corDeFundo{
+  background-color: #F1F1F1;
+}

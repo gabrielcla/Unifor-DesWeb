@@ -1,0 +1,227 @@
+<!-- 
+    Tema - Página básica, usada como padrão, pronta para adicionar conteúdo.
+    Responsivo - Funciona com vários tamanhos diferentes de tela (mobile, desktop, ...)
+  
+    OBS: Sempre que esta página é editada precisa atualizar esta parte do código em todas as outras páginas HTML.
+    
+  -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hotel</title>
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- CSS do Tema -->
+    <link href="tema.css" rel="stylesheet"/>
+      <!-- CSS Icones Google -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+  </head>
+
+  <body>
+<!-- BARRA DE NAVEGAÇÃO -->
+    <nav class="navbar navbar-expand-sm BNav">
+      <div class="container-fluid">
+        <a class="navbar-brand textoBNav" href="Home.html"><b>StarsHotel</b></a>
+        
+        <!-- Botão que esconde os itens na versão mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Itens que no celular vão pra dentro do botão da versão mobile -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="container"><div class="row">
+            <div class="col-6">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link textoBNav" href="Home.html">Início</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link textoBNav" href="#">Mapa</a>
+                </li>
+                <li class="nav-item dropdown ms-auto">
+                  <a class="nav-link dropdown-toggle textoBNav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Idioma</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Português</a></li>
+                    <li><a class="dropdown-item" href="#">Inglês</a></li>
+                  </ul>
+                </li>
+              </ul>           
+            </div>
+
+            <!-- Formulário de Pesquisa -->
+            <div class="col-6">              
+              <form class="row mt-1">
+                <div class="col-sm-6">
+                  <input class="form-control form-control-sm formularioBNav" type="search" placeholder="Qual o destino?" >
+                </div>
+                <div class="col-sm-3">
+                  <input class="form-control form-control-sm formularioBNav" type="date" name="checkin" id="date">
+                </div>
+                <div class="col-sm-3">
+                  <input class="form-control form-control-sm formularioBNav" type="date" name="checkout">
+                </div>
+              </form>            
+            </div>
+          
+          </div></div>
+        </div>
+      </div>
+    </nav>
+<!-- FIM DA BARRA DE NAVEGAÇÃO -->
+
+    
+<!-- CONTEÚDO -->
+    <div class="container mt-3">
+      
+      <div class="row gx-2">
+        <!-- INFORMAÇÕES -->
+        <div class="col-lg-4">
+          <span class="p-3 me-3 border rounded corDeFundo list-group list-group-flush" style="background-color: #8C93EB;">
+              <p class="h5 text-center">Informações</p>
+              <p><strong>Telefone:</strong> (14) 3533-6300</p>
+              <p><strong>Endereço:</strong> Rod.Mal.Rondon, Km. 444 3, s/n - Zona Rural, Lins - SP, 16400-970</p>
+              <!-- Mapa que leva ao endereço do hotel -->
+              <iframe height="200" width="100%" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2080.6459604941783!2d-49.760580561512974!3d-21.691481925126915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94be15c253bf41a9%3A0x8f751fa40ffc0685!2sBlue%20Tree%20Thermas%20de%20Lins!5e0!3m2!1sen!2sbr!4v1666282952207!5m2!1sen!2sbr"></iframe>
+          </span>
+        </div>
+
+        <!--  FOTOS E TÍTULO -->
+        <div class="col-lg-8">
+          <p class="h5 text-center mb-3">Blue Tree Thermas de Lins</p>
+          <span class="p-3 me-3 border rounded corDeFundo list-group list-group-flush">
+            <div class="row">
+              <div class="col">
+                <img src="imgs/hotel1.jpg" class="card-img-top m-2">
+              </div>
+              <div class="col">
+                <img src="imgs/hotel A2.jpg" class="card-img-top m-2">
+              </div>                
+            </div>
+          </span>
+        </div>
+      </div>
+
+
+      <!-- AVALIAÇÕES -->
+      <div class="row mt-3 gx-2 p-3 border rounded corDeFundo">
+        <p class="h5">Resumo das avaliações</p>
+        <div class="card container bg-light p-3">
+          <div class="row">
+
+            <!-- AVALIAÇÕES: Lado Esquerdo -->
+            <div class="col-3 border-end">     
+                <p class="p-3 ms-3 text-center rounded-circle bg-success fw-bold" style="width: 75px;">8.8</p>
+                <span class="fw-bold">Blue Tree Thermas de Lins</span><br>
+                <span class="text-muted" style="font-size: 0.9rem;">Total de avaliações: 54480</span>
+            </div>
+
+            <!-- AVALIAÇÕES: Lado Direito -->
+            <div class="col-9">
+              <span>Localização</span>              
+              <div class="progress mb-2"><div class="progress-bar bg-success" style="width: 83%;" role="progressbar">
+                <span class="ms-2 text-start">Muito Bom (8.3 / 10)</span>
+              </div></div>
+
+              <span>Quartos</span>
+              <div class="progress mb-2"><div class="progress-bar bg-success" style="width: 85%;" role="progressbar">
+                <span class="ms-2 text-start">Excelente (8.5 / 10)</span>
+              </div></div>
+
+              <span>Serviço</span>
+              <div class="progress mb-2"><div class="progress-bar bg-success" style="width: 93%;" role="progressbar">
+                <span class="ms-2 text-start">Excelente (9.3 / 10)</span>
+              </div></div>
+
+              <span>Limpeza</span>
+              <div class="progress mb-2"><div class="progress-bar bg-success" style="width: 89%;" role="progressbar">
+                <span class="ms-2 text-start">Excelente (8.9 / 10)</span>
+              </div></div>
+
+              <span>Custo-Benefício</span>
+              <div class="progress mb-2"><div class="progress-bar bg-success" style="width: 100%;" role="progressbar">
+                <span class="ms-2 text-start">Excelente (10 / 10)</span>
+              </div></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <!-- PREÇOS -->
+      <div class="row my-3 gx-2 p-3 border rounded corDeFundo">
+        <p class="h5">Preços</p>
+
+        <div class="container text-center bg-light">
+          
+          <div class="row">  <!-- Linha do cabeçalho -->
+            <div class="col-2 border border-secondary"><strong>Tipo de Quarto</strong></div>
+            <div class="col-2 border border-secondary"><strong>Pessoas</strong></div>
+            <div class="col-6 border border-secondary"><strong>Detalhes</strong></div>
+            <div class="col-2 border border-secondary"><strong>Preço</strong></div>                        
+          </div>
+
+          <div class="row">   <!-- Quarto Ouro -->
+            <div class="col-2 border border-secondary">Ouro</div>
+            <div class="col-2 border border-secondary">
+              <span class="material-symbols-outlined">person</span><span class="material-symbols-outlined">person</span>
+              <span class="material-symbols-outlined">person</span><span class="material-symbols-outlined">person</span>
+              <span class="material-symbols-outlined">person</span>
+            </div>
+            <div class="col-6 border border-secondary">
+              Detalhes (#Preencher)
+            </div>
+            <div class="col-2 border border-secondary">
+              R$ 350,00
+            </div>            
+          </div>
+
+          <div class="row">   <!-- Quarto Prata -->
+            <div class="col-2 border border-secondary">Prata</div>
+            <div class="col-2 border border-secondary">
+              <span class="material-symbols-outlined">person</span><span class="material-symbols-outlined">person</span>
+              <span class="material-symbols-outlined">person</span>
+            </div>
+            <div class="col-6 border border-secondary">
+              Detalhes (#Preencher)
+            </div>
+            <div class="col-2 border border-secondary">
+              R$ 200,00
+            </div>            
+          </div>
+
+          <div class="row">   <!-- Quarto Bronze -->
+            <div class="col-2 border border-secondary">Bronze</div>
+            <div class="col-2 border border-secondary">
+              <span class="material-symbols-outlined">person</span>
+            </div>
+            <div class="col-6 border border-secondary">
+              Detalhes (#Preencher)
+            </div>
+            <div class="col-2 border border-secondary">
+              R$ 100,00
+            </div>            
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+<!-- FIM DO CONTEÚDO -->
+
+
+<!-- SCRIPTS -->
+    <!-- JS do Tema -->
+    <script type="text/javascript" src="tema.js"></script>
+    
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>

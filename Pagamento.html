@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pagamento</title>
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- CSS do Tema -->
+    <link href="tema.css" rel="stylesheet"/>
+    <link href="Pagamento.css" rel="stylesheet"/>
+  </head>
+
+  <body>
+<!-- BARRA DE NAVEGAÇÃO -->
+    <nav class="navbar navbar-expand-sm BNav">
+      <div class="container-fluid">
+        <a class="navbar-brand textoBNav" href="Home.html"><b>StarsHotel</b></a>
+        
+        <!-- Botão que esconde os itens na versão mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Itens que no celular vão pra dentro do botão da versão mobile -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="container"><div class="row">
+            <div class="col-6">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link textoBNav" href="Home.html">Início</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link textoBNav" href="#">Mapa</a>
+                </li>
+                <li class="nav-item dropdown ms-auto">
+                  <a class="nav-link dropdown-toggle textoBNav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Idioma</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Português</a></li>
+                    <li><a class="dropdown-item" href="#">Inglês</a></li>
+                  </ul>
+                </li>
+              </ul>           
+            </div>
+
+            <!-- Formulário de Pesquisa -->
+            <div class="col-6">              
+              <form class="row mt-1">
+                <div class="col-sm-6">
+                  <input class="form-control form-control-sm formularioBNav" type="search" placeholder="Qual o destino?" >
+                </div>
+                <div class="col-sm-3">
+                  <input class="form-control form-control-sm formularioBNav" type="date" name="checkin" id="date">
+                </div>
+                <div class="col-sm-3">
+                  <input class="form-control form-control-sm formularioBNav" type="date" name="checkout">
+                </div>
+              </form>            
+            </div>
+          
+          </div></div>
+        </div>
+      </div>
+    </nav>
+<!-- FIM DA BARRA DE NAVEGAÇÃO -->
+
+    
+<!-- CONTEÚDO -->
+    <div class="container mt-3 bg-white">
+       <!--Imagem hotel-->
+      <div class="row">
+        <div class="col-md-2">
+          <img src="imgs/hotel1.jpg" class="card-img-top m-2 rounded-5" style="width: 160px; height: 110px;">
+
+          <!--Detalhes da hospedagem lado esquerdo da tela-->
+          <p class="mt-4"><strong>Entrada:</strong></p>
+          <p><strong>Saída:</strong></p>
+          <p class="mt-5"><strong>Hóspedes:</strong></p>
+          <p class="mt-5"><strong>Quarto 1</strong></p>
+          <p><strong>Alimentação:</strong></p>
+          <p><strong>1 diária x R$ 322,07</strong></p>
+          <p><strong>Taxas:</strong></p>
+          <p class="mt-5"><strong>Subtotal:</strong></p>
+          <p><strong>Taxas:</strong></p>
+          <br>
+          <br>
+          <p class="mt-5" style="font-size: 42px;"><strong>Total</strong></p>
+
+        </div>
+
+        <div class="col-md-9">
+          <!--Sobre o hotel-->
+          <div class="row">
+            <div class="col-md-5">
+              <img src="imgs/star-icon.jpg" class="card-img-top" style="width: 30px; height: 27px;">
+              <a>Hotel 8.8 estrelas</a>
+
+              <p class="fs-5"><b>Blue Tree Thermas de Lins</b></p>
+              <p style="margin-top: -20px; color: rgba(0, 0, 0, 0.514);">Rodovia Marechal Rondon - Km 443,3 S/N Centro - Lins - São Paulo, 16400-970</p>
+
+              <!--Detalhes da hospedagem lado direito da tela-->
+              <!--para mexer na margin-top eu usei o bootstrap, já para margin-left usei o proprio html pq quando usava o ms-x eu n consiguia afastar o tanto que queria-->
+              <p class="mt-5" style="margin-left: 50px;">dom <strong>02 out 2022</strong> a partir de 14:00hrs</p>
+              <p style="margin-left: 50px;">seg <strong>03 out 2022</strong> a partir de 12:00hrs</p>
+              <p class="mt-5" style="margin-left: 250px;">2 adultos</p>
+              <p class="mt-5" style="margin-left: 100px;">Superior Twin - Café da manhã</p>
+              <p style="margin-left: 210px;">Café da manhã</p>
+              <p style="margin-left: 250px;">R$ 322,07</p>
+              <p style="margin-left: 250px;">R$ 80,13</p>
+              <p class="mt-5" style="margin-left: 250px;">R$ 322,07</p>
+              <p style="margin-left: 250px;">R$ 80,13</p>
+              <br>
+              <br>
+              <p class="mt-5" style=" margin-left: 100px; font-size: 42px;"><strong>R$ 382,09</strong></p>
+              </div>
+
+            <!--Linha de divisão da tela-->
+            <div class="col-1">
+              <div class="vr" style="height: 100%;"></div>
+            </div>
+
+            <!--Lado direito (Dados pessoais, forma de pagamento e informações do cartão)-->
+            <div class="col-6">
+              <a>
+                <h2 class="mt-3"><img src="imgs/dadosPessoaisIcone.png" class="card-img-top" style="width: 40px; height: 40px;">&nbsp;Dados Pessoais</h2>
+              </a>
+
+              <form class="row g-3 mt-1">
+                <!--Dados Pessoais-->
+                <input type="text" class="form-control" placeholder="Nome Completo" aria-label="Username" aria-describedby="addon-wrapping" style="max-width: 48%;">
+  
+                <input type="text" class="form-control ms-3" placeholder="CEP" aria-label="Username" aria-describedby="addon-wrapping" style="max-width: 48%;">
+  
+                <input type="date" class="form-control" placeholder="Data de Nascimento" aria-label="Username" aria-describedby="addon-wrapping" style="max-width: 48%;">
+  
+                <input type="text" class="form-control ms-3" placeholder="Telefone" aria-label="Username" aria-describedby="addon-wrapping" style="max-width: 48%;">
+
+                <input type="text" class="form-control" placeholder="CPF" aria-label="Username" aria-describedby="addon-wrapping" style="max-width: 48%;">
+  
+                <input type="text" class="form-control ms-3" placeholder="Endereço" aria-label="Username" aria-describedby="addon-wrapping" style="max-width: 48%;">
+                <!--FIM DADOS PESSOAIS-->
+
+                <a><h2 class="mt-3">&nbsp;Formas de Pagamento</h2></a>
+
+                <!--Formas de pagamento-->
+                <div class="row">
+                  <!-- fiz uma gambiarra com &nbsp; pra aumentar o tamanho do botao ;--; -->
+                  <div class="col-6">
+                    <button type="button" class="btn btn-primary btn-lg "><img src="imgs/cartaoCreditoIcone.png">&nbsp;Crédito</button>
+                  </div>
+                  
+                  <div class="col-6">
+                    <button type="button" class="btn btn-primary btn-lg"><img src="imgs/cartaoDebitoIcone.png">&nbsp;Debito</button>
+                  </div>
+                  
+                  <div class="col-6 mt-3">
+                    <button type="button" class="btn btn-primary btn-lg"><img src="imgs/paypalIcone.png">&nbsp;&nbsp;Paypal&nbsp;&nbsp;</button>
+                  </div>
+
+                  <div class="col-6 mt-3">
+                    <button type="button" class="btn btn-primary btn-lg"><img src="imgs/PixIcone.png">&nbsp;&nbsp;&nbsp;&nbsp;Pix&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                  </div>
+                </div>
+
+                <!--Essa parte vai ser onde o usuario vai ter escolhido uma das 4 opçoes de pagamento e vai aparacer lugares para colocar os dados de acordo com cada opção de pagamento
+                mas por enquanto vai ficar sem isso, vou deixar só o cartao-->
+                <a><h2 class="mt-3">&nbsp;informações do cartão</h2></a>
+
+                <div class="row mt-4">
+                  <div class="col-7">
+                    <!--Dados do cartao-->
+                    <input type="text" class="form-control" placeholder="Nome Completo" aria-label="Username" aria-describedby="addon-wrapping">
+  
+                    <div class="row">
+                      <div class="col-8">
+                        <input type="text" class="form-control mt-2" placeholder="CPF" aria-label="Username" aria-describedby="addon-wrapping">
+                      </div>
+
+                      <div class="col-4">
+                        <input type="text" class="form-control mt-2" placeholder="cvc" aria-label="Username" aria-describedby="addon-wrapping">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-8">
+                        <input type="text" class="form-control mt-2" placeholder="Parcelamento" aria-label="Username" aria-describedby="addon-wrapping">
+                      </div>
+
+                      <div class="col-4">
+                        <input type="text" class="form-control mt-2" placeholder="data" aria-label="Username" aria-describedby="addon-wrapping">
+                      </div>
+                    </div>
+                    <!--FIM DADOS DO CARTAO-->
+                  </div>
+
+                  <!--Aqui vai ser onde vai ter aquela animação aparecendo os dados do cartao no desenho do cartao-->
+                  <div class="col-5">
+                    <img src="imgs/cartao.png" style="width: 250px;">
+                  </div>
+                </div>
+
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- FIM DO CONTEÚDO -->
+
+
+<!-- SCRIPTS -->
+    <!-- JS do Tema -->
+    <script type="text/javascript" src="tema.js"></script>
+    
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>

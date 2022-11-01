@@ -1,6 +1,6 @@
 /* Imagem de fundo */
 body{
-  background-image: url('https://i.imgur.com/CSvuq4b.png');
+  background-image: url('../imgs/fundo.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
 }

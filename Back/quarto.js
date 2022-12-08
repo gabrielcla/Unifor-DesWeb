@@ -59,7 +59,7 @@ router.post(endpoint, async function(req, res, next){
         // Se for passado id_hotel válido como parâmetro na requisição, adiciona o elemento a tabela
         if (id_hotel) {
           try {
-              if (await db.collection("hotel").findOne({_id: new ObjectId(id_hotel)})) {
+              if (db.collection("hotel").findOne({_id: new ObjectId(id_hotel)})) {
                   res.json(await db.collection(tabela).insertOne(customer));
               } else {
                   res.send("ERRO: Não existe usuário com o id_hotel fornecido!");

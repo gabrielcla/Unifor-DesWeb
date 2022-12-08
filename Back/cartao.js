@@ -1,20 +1,26 @@
-/*
-Colunas:
-    > ID_usuario (Obrigatório ter)
-	> Numero
-	> cvc
-	> vencimento
-	> Nome titular
-	> CPF titular
-*/
+// Define Banco de Dados
+const bdados = "StarsHotel"
+
+// Define Tabela | Endpoint
+const tabela = "cartao"
+
 
 /*
 ###################################################################################################
+|_________________________________________________________________________________________________|
+
+Colunas:
+    > id_usuario        (Obrigatório)
+	- numero
+	- cvc
+	- vencimento
+	- nome titular
+	- cpf titular
+
+
+###################################################################################################
 |________________________________| CONFIGURA CONEXÃO AO SERVIDOR |________________________________|
 */
-
-// Define Banco de Dados
-const bdados = "StarsHotel"
 
 // Conecta ao servidor com o banco de dados
 const {MongoClient, ObjectId} = require("mongodb");
@@ -41,16 +47,11 @@ router.get('/', (req, res) => res.json({ message: 'Funcionando!' }));
 
 /*
 ###################################################################################################
-|______________________________________| ENDPOINT: usuario |______________________________________|
+|___________________________________________| MÉTODOS |___________________________________________|
 */
 
-// Define tabela e endpoint
-const tabela = "cartao"
-const endpoint = '/cartao'
-
-
 // GET 
-router.get(endpoint+'/:id?', async function(req, res, next) {
+router.get('/'+tabela +'/:id?', async function(req, res, next) {
     try{
       const db = await connect();
       if(req.params.id) // Se o id foi passado como parâmetro retorna 
@@ -64,23 +65,27 @@ router.get(endpoint+'/:id?', async function(req, res, next) {
     }
 })
 
-// POST - Só adiciona se fornecer um id_usuario
-router.post(endpoint, async function(req, res, next){
+// POST - Só adiciona se fornecer id_usuario válido
+router.post('/'+tabela, async function(req, res, next){
     try{
         const customer = req.body; // JSON com a requisição 
         const id_usuario = customer['id_usuario'];
         const db = await connect();
 
-        // Se for passado um id_usuario como parâmetro
-        if(id_usuario)
-            // Se existir alguem na tabela usuario com o id de id_usuario
-            if (await db.collection("usuario").findOne({_id: id_usuario}))
-                // Adiciona novo cartão
-                res.json(await db.collection(tabela).insertOne(customer));
-            else
-                res.send("ERRO: Forneça um id_usuário válido");
-        else
-            res.send("ERRO: Forneça um id_usuário");    
+        // Se for passado id_usuario válido como parâmetro na requisição, adiciona o elemento a tabela
+        if (id_usuario) {
+            try {
+                if (await db.collection("usuario").findOne({_id: new ObjectId(id_usuario)})) {
+                    res.json(await db.collection(tabela).insertOne(customer));
+                } else {
+                    res.send("ERRO: Não existe usuário com o id_usuário fornecido!");
+                }
+            } catch {
+                res.send("ERRO: id_usuário Inválido!");
+            }
+        } else {
+            res.send("ERRO: Forneça id_usuário!");    
+        }
     }
     catch(ex){
       console.log(ex);
@@ -89,7 +94,7 @@ router.post(endpoint, async function(req, res, next){
 })
 
 // PUT
-router.put(endpoint+'/:id', async function(req, res, next){
+router.put('/'+tabela+'/:id', async function(req, res, next){
     try{
       const customer = req.body;
       const db = await connect();
@@ -102,7 +107,7 @@ router.put(endpoint+'/:id', async function(req, res, next){
 })
 
 // DELETE
-router.delete(endpoint+'/:id', async function(req, res, next){
+router.delete('/'+tabela+'/:id', async function(req, res, next){
     try{
       const db = await connect();
       res.json(await db.collection(tabela).deleteOne({_id: new ObjectId(req.params.id)}));
@@ -120,7 +125,7 @@ router.delete(endpoint+'/:id', async function(req, res, next){
 |_______________________________________| INICIA SERVIDOR |_______________________________________|
 */
 
-app.use('/', router); // Sem isso dá erro
+app.use('/', router); 
 
 //inicia o servidor
 app.listen(port);

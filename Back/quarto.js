@@ -56,16 +56,20 @@ router.post(endpoint, async function(req, res, next){
         const id_hotel = customer['id_hotel'];
         const db = await connect();
 
-        // Se for passado um id_usuario como parâmetro
-        if(id_hotel)
-            // Se existir alguem na tabela usuario com o id de id_usuario
-            if (db.collection("hotel").findOne({_id: id_hotel}))
-                // Adiciona novo cartão
-                res.json(await db.collection(tabela).insertOne(customer));
-            else
-                res.send("ERRO: Forneça um id_hotel válido");
-        else
-            res.send("ERRO: Forneça um id_hotel");    
+        // Se for passado id_hotel válido como parâmetro na requisição, adiciona o elemento a tabela
+        if (id_hotel) {
+          try {
+              if (await db.collection("hotel").findOne({_id: new ObjectId(id_hotel)})) {
+                  res.json(await db.collection(tabela).insertOne(customer));
+              } else {
+                  res.send("ERRO: Não existe usuário com o id_hotel fornecido!");
+              }
+          } catch {
+              res.send("ERRO: id_hotel Inválido!");
+          }
+      } else {
+          res.send("ERRO: Forneça id_hotel!");    
+      }
     }
     catch(ex){
       console.log(ex);

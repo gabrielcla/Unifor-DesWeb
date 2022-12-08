@@ -24,12 +24,12 @@ Colunas:
 
 // Conecta ao servidor com o banco de dados
 const {MongoClient, ObjectId} = require("mongodb");
-async function connect(){
-  if(global.db) return global.db;
-    const conn = await MongoClient.connect("mongodb+srv://admin:WktJ1MdhrUdoxWhz@back-end.zhcmjev.mongodb.net/?retryWrites=true&w=majority");
-  if(!conn) return new Error("Can't connect");
-    global.db = await conn.db(bdados);
-  return global.db;
+async function connect() {
+    if(global.db) return global.db;
+        const conn = await MongoClient.connect("mongodb+srv://admin:WktJ1MdhrUdoxWhz@back-end.zhcmjev.mongodb.net/?retryWrites=true&w=majority");
+    if(!conn) return new Error("Can't connect");
+        global.db = await conn.db(bdados);
+    return global.db;
 }
 
 const express = require('express');
@@ -53,11 +53,11 @@ router.get('/', (req, res) => res.json({ message: 'Funcionando!' }));
 // GET 
 router.get('/'+tabela +'/:id?', async function(req, res, next) {
     try{
-      const db = await connect();
-      if(req.params.id) // Se o id foi passado como parâmetro retorna 
-        res.json(await db.collection(tabela).findOne({_id: new ObjectId(req.params.id)}));
-      else
-        res.json(await db.collection(tabela).find().toArray());
+        const db = await connect();
+        if(req.params.id) // Se o id foi passado como parâmetro retorna 
+            res.json(await db.collection(tabela).findOne({_id: new ObjectId(req.params.id)}));
+        else
+            res.json(await db.collection(tabela).find().toArray());
     }
     catch(ex){
         console.log(ex);
@@ -65,7 +65,7 @@ router.get('/'+tabela +'/:id?', async function(req, res, next) {
     }
 })
 
-// POST - Só adiciona se fornecer id_usuario válido
+// POST - Só adiciona se fornecer na requisição id_usuario válido
 router.post('/'+tabela, async function(req, res, next){
     try{
         const customer = req.body; // JSON com a requisição 
@@ -78,13 +78,13 @@ router.post('/'+tabela, async function(req, res, next){
                 if (await db.collection("usuario").findOne({_id: new ObjectId(id_usuario)})) {
                     res.json(await db.collection(tabela).insertOne(customer));
                 } else {
-                    res.send("ERRO: Não existe usuário com o id_usuário fornecido!");
+                    res.send("ERRO: Não existe usuário com o id_usuario fornecido!");
                 }
             } catch {
-                res.send("ERRO: id_usuário Inválido!");
+                res.send("ERRO: id_usuario Inválido!");
             }
         } else {
-            res.send("ERRO: Forneça id_usuário!");    
+            res.send("ERRO: Forneça id_usuario!");    
         }
     }
     catch(ex){
@@ -117,7 +117,6 @@ router.delete('/'+tabela+'/:id', async function(req, res, next){
       res.status(400).json({erro: `${ex}`});
     }
 })
-
 
 
 /*

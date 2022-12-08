@@ -1,19 +1,40 @@
+// Define Banco de Dados
+const bdados = "StarsHotel"
+
+// Define Tabela | Endpoint
+const tabela = "usuario"
+
+
 /*
+###################################################################################################
+|_________________________________________________________________________________________________|
+
+Colunas:
+    - nome
+	- email
+	- senha
+	- idioma
+	- moeda
+	- not_reservas
+	- not_promocoes
+	- endereco
+	- cep
+	- telefone
+	- nascimento
+
+
 ###################################################################################################
 |________________________________| CONFIGURA CONEXÃO AO SERVIDOR |________________________________|
 */
 
-// Define Banco de Dados
-const bdados = "StarsHotel"
-
 // Conecta ao servidor com o banco de dados
 const {MongoClient, ObjectId} = require("mongodb");
-async function connect(){
-  if(global.db) return global.db;
-    const conn = await MongoClient.connect("mongodb+srv://admin:WktJ1MdhrUdoxWhz@back-end.zhcmjev.mongodb.net/?retryWrites=true&w=majority");
-  if(!conn) return new Error("Can't connect");
-    global.db = await conn.db(bdados);
-  return global.db;
+async function connect() {
+    if(global.db) return global.db;
+        const conn = await MongoClient.connect("mongodb+srv://admin:WktJ1MdhrUdoxWhz@back-end.zhcmjev.mongodb.net/?retryWrites=true&w=majority");
+    if(!conn) return new Error("Can't connect");
+        global.db = await conn.db(bdados);
+    return global.db;
 }
 
 const express = require('express');
@@ -31,16 +52,11 @@ router.get('/', (req, res) => res.json({ message: 'Funcionando!' }));
 
 /*
 ###################################################################################################
-|______________________________________| ENDPOINT: usuario |______________________________________|
+|___________________________________________| MÉTODOS |___________________________________________|
 */
 
-// Define tabela e endpoint
-const tabela = "usuario"
-const endpoint = '/usuario'
-
-
-// GET
-router.get(endpoint+'/:id?', async function(req, res, next) {
+// GET 
+router.get('/'+tabela +'/:id?', async function(req, res, next) {
     try{
       const db = await connect();
       if(req.params.id) // Se o id foi passado como parâmetro retorna 
@@ -49,18 +65,17 @@ router.get(endpoint+'/:id?', async function(req, res, next) {
         res.json(await db.collection(tabela).find().toArray());
     }
     catch(ex){
-      console.log(ex);
-      res.status(400).json({erro: `${ex}`});
+        console.log(ex);
+        res.status(400).json({erro: `${ex}`});
     }
 })
 
 // POST
-router.post(endpoint, async function(req, res, next){
+router.post('/'+tabela, async function(req, res, next){
     try{
       const customer = req.body;
       const db = await connect();
       res.json(await db.collection(tabela).insertOne(customer));
-      // res.send("Hello world!");
     }
     catch(ex){
       console.log(ex);
@@ -69,7 +84,7 @@ router.post(endpoint, async function(req, res, next){
 })
 
 // PUT
-router.put(endpoint+'/:id', async function(req, res, next){
+router.put('/'+tabela+'/:id', async function(req, res, next){
     try{
       const customer = req.body;
       const db = await connect();
@@ -82,7 +97,7 @@ router.put(endpoint+'/:id', async function(req, res, next){
 })
 
 // DELETE
-router.delete(endpoint+'/:id', async function(req, res, next){
+router.delete('/'+tabela+'/:id', async function(req, res, next){
     try{
       const db = await connect();
       res.json(await db.collection(tabela).deleteOne({_id: new ObjectId(req.params.id)}));
@@ -94,13 +109,12 @@ router.delete(endpoint+'/:id', async function(req, res, next){
 })
 
 
-
 /*
 ###################################################################################################
 |_______________________________________| INICIA SERVIDOR |_______________________________________|
 */
 
-app.use('/', router); // Sem isso dá erro
+app.use('/', router); 
 
 //inicia o servidor
 app.listen(port);
